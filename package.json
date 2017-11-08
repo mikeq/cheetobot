@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "botkit": "^0.6.6"
+  },
+  "scripts": {
+    "bot": "node bot.js"
+  }
+}

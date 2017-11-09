@@ -14,7 +14,7 @@ controller.hears(['hello'], listeners, (bot, message) => {
   bot.reply(message, 'Hey there lil fellar');
 });
 
-controller.hears(words, ['message_received'], (bot, message) => {
+controller.hears(['shit'], ['message_received'], (bot, message) => {
   bot.reply(message, `You are fined one credit for a
     violation of the Verbal Morality Statutes!`);
 });

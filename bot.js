@@ -9,13 +9,14 @@ controller.spawn({
   token: process.env.token
 }).startRTM(err => console.log(err));
 
-controller.hears(['hello'], 'message_received', (bot, message) => {
+const listeners = 'direct_message, direct_mention, mention, message_received';
+controller.hears(['hello', 'shit'], listeners, (bot, message) => {
   bot.reply(message, `You are fined one credit for a
     violation of the Verbal Morality Statutes!`);
 });
 
 /*
-const listeners = 'direct_message, direct_mention, mention';
+
 controller.hears(['hello'], listeners, (bot, message) => {
   bot.reply(message, 'Hey there lil fellar');
 });

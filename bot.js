@@ -10,7 +10,7 @@ controller.spawn({
 }).startRTM(err => console.log(err));
 
 const listeners = 'direct_message, direct_mention, mention, message_received';
-controller.hears(['hello', 'shit'], listeners, (bot, message) => {
+controller.hears(['hello', `(${wordString})`], listeners, (bot, message) => {
   bot.reply(message, `You are fined one credit for a
     violation of the Verbal Morality Statutes!`);
 });

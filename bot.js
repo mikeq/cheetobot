@@ -1,8 +1,8 @@
 const Botkit = require('botkit');
 const words = require('./config/words');
 const wordString = words.join('|');
-const myReg = new RegExp(`/b(#${wordString})b/`, 'ig');
-console.log(myReg);
+const myReg = new RegExp(`/(${wordString})/`, 'ig');
+
 const controller = Botkit.slackbot({});
 
 controller.spawn({

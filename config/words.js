@@ -1,4 +1,4 @@
-const words = [
+module.exports = [
   'arse',
   'ass',
   'bastard',
@@ -22,5 +22,3 @@ const words = [
   'shit',
   'wank',
 ];
-
-export default words;

@@ -9,7 +9,6 @@
   "dependencies": {
     "botkit": "^0.6.6"
   },
-  "main": "bot.js",
   "scripts": {
     "bot": "node bot.js"
   },

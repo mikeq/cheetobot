@@ -1,0 +1,26 @@
+const words = [
+  'arse',
+  'ass',
+  'bastard',
+  'bitch',
+  'bugger',
+  'bollocks',
+  'bullshit',
+  'cock',
+  'cunt',
+  'damn',
+  'damnit',
+  'dick',
+  'douche',
+  'fag',
+  'fanny',
+  'fuck',
+  'fucked',
+  'fucking',
+  'prick',
+  'piss',
+  'shit',
+  'wank',
+];
+
+module.exports(words);

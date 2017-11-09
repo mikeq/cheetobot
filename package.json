@@ -13,6 +13,8 @@
     "bot": "node bot.js"
   },
   "engines": {
-    "node": "9.0.0"
-  }
+    "node": "9.0.0",
+    "yarn": "1.3.2"
+  },
+  "license": "MIT"
 }

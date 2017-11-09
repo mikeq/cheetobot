@@ -8,12 +8,17 @@ controller.spawn({
   token: process.env.token
 }).startRTM(err => console.log(err));
 
-const listeners = 'direct_message, direct_mention, mention, message_received';
-controller.hears([`(${wordString})`], listeners, (bot, message) => {
-  bot.reply(message, `You are fined one credit for a
-    violation of the Verbal Morality Statutes!`);
+controller.hears([`(${wordString})`], ['ambient'], (bot, message) => {
+  bot.api.users.info({user: message.user}, (err, resp) => {
+    if (err) console.log(err);
+
+    let name = resp.user.profile.display_name;
+    bot.reply(message, `${name} you are fined one credit for a
+    violation of the Verbal Morality Statutes!`)
+  });
 });
 
+const listeners = 'direct_message, direct_mention, mention';
 controller.hears(['(hello|hey|hi)'], listeners, (bot, message) => {
   bot.reply(message, 'Hey there lil fellar');
 });

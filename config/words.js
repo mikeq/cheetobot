@@ -23,4 +23,4 @@ const words = [
   'wank',
 ];
 
-module.exports(words);
+export default words;

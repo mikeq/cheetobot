@@ -9,7 +9,7 @@ controller.spawn({
   token: process.env.token
 }).startRTM(err => console.log(err));
 
-controller.hears(myReg, ['message_received'], (bot, message) => {
+controller.hears(['hello', myReg], ['message_received'], (bot, message) => {
   bot.reply(message, `You are fined one credit for a
     violation of the Verbal Morality Statutes!`);
 });

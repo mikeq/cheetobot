@@ -46,8 +46,10 @@ exports.sendMessage = async (bot, message) => {
   }
 
   msg = { attachments: [{
-    text: `${userInfo.profile.first_name} you are fined one credit for a violation of the Verbal Morality Statutes!`,
-    footer: `You have been fined a total of ${++credits} credits`
+    color: 'warning',
+    text: `${userInfo.profile.real_name} you are fined one credit for a violation of the Verbal Morality Statutes!`,
+    footer: `You have been fined a total of ${++credits} credits`,
+    thumb_url: 'https://photos.app.goo.gl/g2xAlzE3nD1jSXzi1'
   }]};
   bot.reply(message, msg);
 }

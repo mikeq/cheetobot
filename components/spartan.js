@@ -17,8 +17,12 @@ const updateCredit = (person) => {
   });
 };
 
-const createDemolitionRecord = (user) => {
-  console.log(user);
+const createDemolitionRecord = ({id, profile: {real_name}}) => {
+  Demolition.create({
+    slackid: id,
+    name: real_name,
+    credits: 1
+  });
 };
 
 const getUserInfo = (bot, user) => {

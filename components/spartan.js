@@ -44,8 +44,10 @@ exports.sendMessage = async (bot, message) => {
   } else {
     createDemolitionRecord(userInfo);
   }
-  console.log('Sending message');
-  bot.reply(message, `${userInfo.profile.first_name} you are fined one credit for a
-    violation of the Verbal Morality Statutes!
-    You have been fined a total of ${++credits}`);
+
+  msg = { attachments: [{
+    text: `${userInfo.profile.first_name} you are fined one credit for a violation of the Verbal Morality Statutes!`,
+    footer: `You have been fined a total of ${++credits} credits`
+  }]};
+  bot.reply(message, msg);
 }

@@ -49,7 +49,7 @@ exports.sendMessage = async (bot, message) => {
     color: 'warning',
     text: `${userInfo.profile.real_name} you are fined one credit for a violation of the Verbal Morality Statutes!`,
     footer: `You have been fined a total of ${++credits} credits`,
-    thumb_url: 'https://photos.app.goo.gl/g2xAlzE3nD1jSXzi1'
+    thumb_url: 'http://www.dystopianmovies.org/wp-content/uploads/raymond-cocteau-demolition-man-nathaniel-hawthorne-64x64.jpg'
   }]};
   bot.reply(message, msg);
 }

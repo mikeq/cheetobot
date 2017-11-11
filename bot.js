@@ -1,4 +1,5 @@
 const Botkit = require('botkit');
+require('./components/db');
 const Spartan = require('./components/spartan');
 const words = require('./config/words');
 const wordString = words.join('|');

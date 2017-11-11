@@ -7,7 +7,8 @@
     "name": "Mike Quinn"
   },
   "dependencies": {
-    "botkit": "^0.6.6"
+    "botkit": "^0.6.6",
+    "mongoose": "^4.13.1"
   },
   "scripts": {
     "bot": "node bot.js"

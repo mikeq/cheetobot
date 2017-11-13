@@ -1,6 +1,7 @@
 const Botkit = require('botkit');
 require('./components/db');
 const Spartan = require('./components/spartan');
+const Random = require('./components/random');
 const words = require('./config/words');
 const wordString = words.join('|');
 
@@ -10,13 +11,19 @@ controller.spawn({
   token: process.env.token
 }).startRTM(err => console.log(err));
 
-controller.hears([`(${wordString})`], ['ambient'], (bot, message) => {
+controller.hears([`\\b(${wordString})\\b`], ['ambient'], (bot, message) => {
   Spartan.sendMessage(bot, message);
 });
 
 const listeners = 'direct_message, direct_mention, mention';
-controller.hears(['(hello|hey|hi)'], listeners, (bot, message) => {
+controller.hears(['\\b(hello|hey|hi)\\b'], listeners, (bot, message) => {
   bot.reply(message, 'Hey there lil fellar');
 });
 
+controller.hears('\\b(long morning|lunch)\\b', ['ambient'], (bot, message) => {
+  bot.reply(message, Random.getLunch());
+});
 
+controller.hears('\\b(rh)\\b', ['ambient'], (bot, message) => {
+  bot.reply(message, Random.getHomeTime());
+});

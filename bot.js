@@ -10,12 +10,12 @@ controller.spawn({
   token: process.env.token
 }).startRTM(err => console.log(err));
 
-controller.hears([`(${wordString})`], ['ambient'], (bot, message) => {
+controller.hears([`\\b(${wordString})\\b`], ['ambient'], (bot, message) => {
   Spartan.sendMessage(bot, message);
 });
 
 const listeners = 'direct_message, direct_mention, mention';
-controller.hears(['(hello|hey|hi)'], listeners, (bot, message) => {
+controller.hears(['\\b(hello|hey|hi)\\b'], listeners, (bot, message) => {
   bot.reply(message, 'Hey there lil fellar');
 });
 

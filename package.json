@@ -1,7 +1,7 @@
 {
   "name": "cheetobot",
   "description": "Slack bot",
-  "version": "0.0.2",
+  "version": "0.5.0",
   "author": {
     "email": "mike@velochallenge.org",
     "name": "Mike Quinn"

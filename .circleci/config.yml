@@ -7,7 +7,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:9.0
-      - image: circleci/yarn:1.3.2
 
     working_directory: ~/repo
 

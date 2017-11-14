@@ -44,6 +44,10 @@ controller.hears('\\b(long morning|lunch)\\b', ['ambient'], (bot, message) => {
   bot.reply(message, Random.getLunch(moment()));
 });
 
+controller.hears(':joy:', ['ambient'], (bot, message) => {
+  bot.reply(message, ':joy:');
+});
+
 controller.hears('\\b(rh)\\b', ['ambient'], (bot, message) => {
   bot.reply(message, Random.getHomeTime(moment()));
 });

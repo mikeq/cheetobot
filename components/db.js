@@ -15,4 +15,4 @@ const conn = mongoose.connection;
 conn
 .on('error', error => console.error("Problem connecting to MongoDB", error.message))
 .on('connected', () => console.log('Connected to MongoDB'))
-.on('disconnected', () => console.log('Dicsonnected from MongoDB'));
+.on('disconnected', () => console.log('Disconnected from MongoDB'));

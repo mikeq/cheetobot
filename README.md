@@ -1,5 +1,6 @@
 # CheetoBot - a slack bot
 
+[![CircleCI](https://circleci.com/gh/mikeq/cheetobot/tree/master.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/mikeq/cheetobot/tree/master)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ## Requirements

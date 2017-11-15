@@ -7,11 +7,15 @@
     "name": "Mike Quinn"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "botkit": "^0.6.6",
+    "express": "^4.16.2",
     "moment": "^2.19.2",
-    "mongoose": "^4.13.1"
+    "mongoose": "^4.13.1",
+    "node-fetch": "^1.7.3"
   },
   "scripts": {
+    "start": "node index.js",
     "bot": "node bot.js",
     "test": "jest",
     "precommit": "lint-staged"

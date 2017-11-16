@@ -18,4 +18,18 @@ conn
     console.error('Problem connecting to MongoDB', error.message)
   )
   .on('connected', () => console.log('Connected to MongoDB'))
-  .on('disconnected', () => console.log('Disconnected from MongoDB'));
+  .on('disconnected', () => console.log('Disconnected from MongoDB'))
+  .on('SIGINT', () => {
+    mongoose.connection
+      .close()
+      .then(() => {
+        console.log(
+          'Mongoose default connection disconnected through app termination'
+        );
+        process.exit(0);
+      })
+      .catch(err => {
+        console.error(err.message);
+        process.exit(0);
+      });
+  });

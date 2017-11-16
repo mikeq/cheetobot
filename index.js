@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 require('./components/db');
 const say = require('./components/say');
 
@@ -31,6 +32,8 @@ app.post('/say/add', async (req, resp) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`CheetoBot listening on ${port}`);
+mongoose.connection.on('open', () => {
+  app.listen(port, () => {
+    console.log(`CheetoBot listening on ${port}`);
+  });
 });

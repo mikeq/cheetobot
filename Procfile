@@ -1,2 +1,2 @@
-worker: yarn bot
-web: yarn start
+worker: node bot.js
+web: node index.js

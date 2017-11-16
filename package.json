@@ -12,6 +12,7 @@
     "express": "^4.16.2",
     "moment": "^2.19.2",
     "mongoose": "^4.13.1",
+    "node-ermahgerd": "^0.0.1",
     "node-fetch": "^1.7.3"
   },
   "scripts": {

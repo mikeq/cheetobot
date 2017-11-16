@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('./components/db');
+const ermahgerd = require('node-ermahgerd');
 const say = require('./components/say');
 
 const app = express();
@@ -16,9 +17,12 @@ app.get('/', (req, resp) => {
 
 app.post('/say', async (req, resp) => {
   let sayings = await say.getRandomSaying();
+  let reply = sayings[0].saying;
+
+  if (req.body.text.includes('-e')) reply = ermahgerd.translate(reply);
   resp.json({
     response_type: 'in_channel',
-    text: sayings[0].saying,
+    text: reply,
   });
 });
 

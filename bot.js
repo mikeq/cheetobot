@@ -1,8 +1,8 @@
 const Botkit = require('botkit');
 const moment = require('moment');
-const { promisify } = require('util');
 
 require('./components/db');
+const say = require('./components/say');
 const Spartan = require('./components/spartan');
 const Random = require('./components/random');
 const words = require('./config/words');
@@ -50,4 +50,11 @@ controller.hears(':joy:', ['ambient'], (bot, message) => {
 
 controller.hears('\\b(rh)\\b', ['ambient'], (bot, message) => {
   bot.reply(message, Random.getHomeTime(moment()));
+});
+
+controller.hears('\\b(cheetobot)\\b', ['ambient'], async (bot, message) => {
+  let sayings = await say.getRandomSaying();
+  let reply = sayings[0].saying;
+
+  bot.reply(message, reply);
 });
